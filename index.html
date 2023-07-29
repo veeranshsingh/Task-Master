@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Todo List</h1>
+  
+  <div id="searchSection">
+    <select id="searchOption">
+      <option selected>Search Type</option>
+      <option value="exact">Exact Search</option>
+      <option value="similar">Similar Words</option>
+      <option value="partial">Partial Search</option>
+      <option value="tags">Search by Tags</option>
+    </select>
+    <input type="text" id="searchQuery" placeholder="Search...">
+    <button onclick="searchTasks()">Search</button>
+    <button onclick="renderTodoList()">Back</button>
+  </div>
+  <br />
+  <div class="add-todo-container">
+    <input type="text" id="taskInput" placeholder="Enter your task">
+    <input type="text" id="tags" placeholder="Enter tag">
+    <select id="categoryInput">
+      <option selected>Select Category</option>
+      <option value="work">Work</option>
+      <option value="personal">Personal</option>
+      <option value="shopping">Shopping</option>
+      <!-- Add more categories here -->
+    </select>
+
+    <!-- <input type="date" id="dueDateInput"> -->
+    <label>Due Date:</label>
+    <input type="datetime-local" id="dueDateInput">
+    <label>Reminder:</label>
+    <input type="datetime-local" id="reminderInput">
+    <select id="priorityInput">
+      <option selected>Priority</option>
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+    <button onclick="addTodo()">Add Todo</button>
+  </div>
+  <br />
+  <br />
+  <div class="filters">
+    <label for="dueDateFilter">Filter by Due Date:</label>
+    <input type="date" id="dueDateFilter">
+    <button onclick="filterByDueDate()">Apply</button>
+
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter">
+      <option value="">All</option>
+      <option value="work">Work</option>
+      <option value="personal">Personal</option>
+      <option value="personal">Shopping</option>
+      <!-- Add more categories as needed -->
+    </select>
+    <button onclick="filterByCategory()">Apply</button>
+
+    <label for="priorityFilter">Filter by Priority:</label>
+    <select id="priorityFilter">
+      <option value="">All</option>
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+    <button onclick="filterByPriority()">Apply</button>
+    <button onclick="resetFilters()">Reset Filters</button>
+  </div>
+  <br />
+  <br />
+  <div id="sortingButtons">
+    <button onclick="sortTodoList('dueDate')">Sort by Due Date</button>
+    <button onclick="sortTodoList('priority')">Sort by Priority</button>
+  </div>
+
+  <br />
+
+  <!-- View Backlogs Button -->
+  <button onclick="viewBacklogs()">View Backlogs</button>
+
+  <!-- Activity Logs Button -->
+  <button onclick="viewAllLogs()">View All Activity Logs</button>
+
+  <ul id="todoList"></ul>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

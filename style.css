@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 30px;
+  background-image: url(imageto-do.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1 {
+  color: #007bff;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.filter-container label,
+.filter-container input,
+.filter-container select {
+  margin: 5px;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+li:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+li span {
+  flex: 1;
+}
+
+li span[contenteditable="true"] {
+  cursor: text;
+}
+
+li span[contenteditable="true"]:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: #fff;
+}
+
+li button {
+  margin-left: 10px;
+  padding: 5px 8px; 
+  font-size: 14px; 
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+li button:hover {
+  background-color: #0056b3;
+}
+
+li button:active {
+  background-color: #fc0909;
+}
+
+li input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#taskInput,
+#categoryInput,
+#dueDateInput,
+#priorityInput,
+button {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 10px; 
+  width: 100%;
+  max-width: 150px;
+  font-size: 12px; 
+}
+
+#taskInput:focus,
+#categoryInput:focus,
+#dueDateInput:focus,
+#priorityInput:focus,
+button:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.done-task {
+  text-decoration: line-through;
+}
